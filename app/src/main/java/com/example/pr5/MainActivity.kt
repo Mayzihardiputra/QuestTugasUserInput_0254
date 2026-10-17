@@ -48,3 +48,22 @@
         var email by remember { mutableStateOf("") }
         var birthDate by remember { mutableStateOf("") }
         var experience by remember { mutableStateOf("") }
+
+        var androidChecked by remember { mutableStateOf(false) }
+        var uiuxChecked by remember { mutableStateOf(false) }
+        var webChecked by remember { mutableStateOf(false) }
+
+        var expandedExperience by remember { mutableStateOf(false) }
+        val experienceList = listOf("Beginner", "Intermediate", "Expert")
+
+        val context = LocalContext.current
+        val calendar = Calendar.getInstance()
+        val datePickerDialog = DatePickerDialog(
+            context,
+            { _, year, month, dayOfMonth ->
+                birthDate = "$dayOfMonth/${month + 1}/$year"
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
