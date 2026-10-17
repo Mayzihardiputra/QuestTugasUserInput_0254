@@ -236,3 +236,25 @@
                                         .clickable { datePickerDialog.show() }
                                 )
                             }
+
+                            Box(modifier = Modifier.weight(1f)) {
+                                OutlinedTextField(
+                                    value = experience,
+                                    onValueChange = {},
+                                    readOnly = true,
+                                    enabled = false,
+                                    placeholder = { Text(stringResource(id = R.string.hint_experience)) },
+                                    trailingIcon = {
+                                        Icon(
+                                            painter = painterResource(id = android.R.drawable.arrow_down_float),
+                                            contentDescription = null
+                                        )
+                                    },
+                                    modifier = Modifier.fillMaxWidth(),
+                                    shape = RoundedCornerShape(12.dp),
+                                    colors = OutlinedTextFieldDefaults.colors(
+                                        disabledTextColor = MaterialTheme.colorScheme.onSurface,
+                                        disabledPlaceholderColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        disabledBorderColor = MaterialTheme.colorScheme.outline
+                                    )
+                                )
