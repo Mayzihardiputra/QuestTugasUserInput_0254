@@ -134,3 +134,15 @@
                         .height(300.dp),
                     contentScale = ContentScale.Crop
                 )
+
+                // 2. Floating Card Form
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 220.dp, start = 16.dp, end = 16.dp)
+                        .shadow(8.dp, RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)),
+                    shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorResource(id = R.color.card_background)
+                    )
+                )
