@@ -1,47 +1,32 @@
-package com.example.pr5
+    package com.example.pr5
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.pr5.ui.theme.Pr5Theme
+    import android.app.DatePickerDialog
+    import android.os.Bundle
+    import androidx.activity.ComponentActivity
+    import androidx.activity.compose.setContent
+    import androidx.compose.foundation.Image
+    import androidx.compose.foundation.clickable
+    import androidx.compose.foundation.layout.*
+    import androidx.compose.foundation.rememberScrollState
+    import androidx.compose.foundation.shape.RoundedCornerShape
+    import androidx.compose.foundation.verticalScroll
+    import androidx.compose.material3.*
+    import androidx.compose.runtime.*
+    import androidx.compose.ui.Alignment
+    import androidx.compose.ui.Modifier
+    import androidx.compose.ui.draw.shadow
+    import androidx.compose.ui.graphics.Color
+    import androidx.compose.ui.layout.ContentScale
+    import androidx.compose.ui.platform.LocalContext
+    import androidx.compose.ui.res.colorResource
+    import androidx.compose.ui.res.painterResource
+    import androidx.compose.ui.res.stringResource
+    import androidx.compose.ui.unit.dp
+    import androidx.compose.ui.unit.sp
+    import kotlinx.coroutines.delay
+    import java.util.Calendar
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Pr5Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+    class MainActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Pr5Theme {
-        Greeting("Android")
-    }
-}
