@@ -280,3 +280,36 @@
                                 }
                             }
                         }
+
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        // Bagian Pilihan Skill
+                        Column(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.label_skills),
+                                fontSize = 14.sp,
+                                color = colorResource(id = R.color.text_main),
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Checkbox(checked = androidChecked, onCheckedChange = { androidChecked = it })
+                                    Text(text = stringResource(id = R.string.skill_android), fontSize = 12.sp)
+                                }
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Checkbox(checked = uiuxChecked, onCheckedChange = { uiuxChecked = it })
+                                    Text(text = stringResource(id = R.string.skill_ui_ux), fontSize = 12.sp)
+                                }
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Checkbox(checked = webChecked, onCheckedChange = { webChecked = it })
+                                    Text(text = stringResource(id = R.string.skill_web), fontSize = 12.sp)
+                                }
+                            }
+                        }
