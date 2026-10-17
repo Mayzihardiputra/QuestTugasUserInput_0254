@@ -67,3 +67,11 @@
             calendar.get(Calendar.MONTH),
             calendar.get(Calendar.DAY_OF_MONTH)
         )
+
+        // Tombol Proceed aktif (ungu) hanya jika semua data sudah terisi
+        val isFormComplete = firstName.isNotBlank() &&
+                lastName.isNotBlank() &&
+                email.isNotBlank() &&
+                birthDate.isNotBlank() &&
+                experience.isNotBlank() &&
+                (androidChecked || uiuxChecked || webChecked)
