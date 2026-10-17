@@ -100,3 +100,12 @@
                         color = colorResource(id = R.color.purple_title)
                     )
                 },
+                text = {
+                    Text(
+                        text = "Nama: $firstName $lastName\n" +
+                                "Email: $email\n" +
+                                "Tgl Lahir: $birthDate\n" +
+                                "Experience: $experience\n" +
+                                "Skill: $skillText"
+                    )
+                },
