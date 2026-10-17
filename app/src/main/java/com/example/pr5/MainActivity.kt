@@ -145,4 +145,48 @@
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.card_background)
                     )
-                )
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .verticalScroll(rememberScrollState())
+                            .padding(24.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.form_title),
+                            fontSize = 26.sp,
+                            color = colorResource(id = R.color.purple_title),
+                            style = MaterialTheme.typography.titleLarge
+                        )
+
+                        Spacer(modifier = Modifier.height(4.dp))
+
+                        Text(
+                            text = stringResource(id = R.string.form_subtitle),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.text_subtitle)
+                        )
+
+                        Spacer(modifier = Modifier.height(24.dp))
+
+                        // Row: Nama Depan & Nama Belakang
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            OutlinedTextField(
+                                value = firstName,
+                                onValueChange = { firstName = it },
+                                placeholder = { Text(stringResource(id = R.string.hint_first_name)) },
+                                modifier = Modifier.weight(1f),
+                                shape = RoundedCornerShape(12.dp)
+                            )
+                            OutlinedTextField(
+                                value = lastName,
+                                onValueChange = { lastName = it },
+                                placeholder = { Text(stringResource(id = R.string.hint_last_name)) },
+                                modifier = Modifier.weight(1f),
+                                shape = RoundedCornerShape(12.dp)
+                            )
+                        }
