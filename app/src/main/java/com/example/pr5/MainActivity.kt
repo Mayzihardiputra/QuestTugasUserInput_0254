@@ -190,3 +190,49 @@
                                 shape = RoundedCornerShape(12.dp)
                             )
                         }
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        // Input Email
+                        OutlinedTextField(
+                            value = email,
+                            onValueChange = { email = it },
+                            placeholder = { Text(stringResource(id = R.string.hint_email)) },
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        // Row: Tanggal Lahir & Experience
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Box(modifier = Modifier.weight(1f)) {
+                                OutlinedTextField(
+                                    value = birthDate,
+                                    onValueChange = {},
+                                    readOnly = true,
+                                    enabled = false,
+                                    placeholder = { Text(stringResource(id = R.string.hint_birth_date)) },
+                                    trailingIcon = {
+                                        Icon(
+                                            painter = painterResource(id = android.R.drawable.ic_menu_my_calendar),
+                                            contentDescription = null
+                                        )
+                                    },
+                                    modifier = Modifier.fillMaxWidth(),
+                                    shape = RoundedCornerShape(12.dp),
+                                    colors = OutlinedTextFieldDefaults.colors(
+                                        disabledTextColor = MaterialTheme.colorScheme.onSurface,
+                                        disabledPlaceholderColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        disabledBorderColor = MaterialTheme.colorScheme.outline
+                                    )
+                                )
+                                Box(
+                                    modifier = Modifier
+                                        .matchParentSize()
+                                        .clickable { datePickerDialog.show() }
+                                )
+                            }
