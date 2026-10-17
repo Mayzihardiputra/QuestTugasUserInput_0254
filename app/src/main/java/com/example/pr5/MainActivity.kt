@@ -124,4 +124,13 @@
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)
-            )
+            ) {
+                // 1. Gambar Latar Belakang Banner
+                Image(
+                    painter = painterResource(id = R.drawable.bg_banner),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(300.dp),
+                    contentScale = ContentScale.Crop
+                )
