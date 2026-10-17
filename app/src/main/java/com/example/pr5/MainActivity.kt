@@ -90,3 +90,13 @@
                 if (uiuxChecked) add("UI/UX")
                 if (webChecked) add("Web")
             }.ifEmpty { listOf("-") }.joinToString()
+
+            AlertDialog(
+                onDismissRequest = { showSuccessDialog = false },
+                shape = RoundedCornerShape(20.dp),
+                title = {
+                    Text(
+                        text = "Data Berhasil Dikirim",
+                        color = colorResource(id = R.color.purple_title)
+                    )
+                },
