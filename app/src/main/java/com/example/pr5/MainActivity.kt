@@ -258,3 +258,25 @@
                                         disabledBorderColor = MaterialTheme.colorScheme.outline
                                     )
                                 )
+                                Box(
+                                    modifier = Modifier
+                                        .matchParentSize()
+                                        .clickable { expandedExperience = true }
+                                )
+
+                                DropdownMenu(
+                                    expanded = expandedExperience,
+                                    onDismissRequest = { expandedExperience = false }
+                                ) {
+                                    experienceList.forEach { item ->
+                                        DropdownMenuItem(
+                                            text = { Text(text = item) },
+                                            onClick = {
+                                                experience = item
+                                                expandedExperience = false
+                                            }
+                                        )
+                                    }
+                                }
+                            }
+                        }
