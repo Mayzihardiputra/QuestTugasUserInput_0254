@@ -313,3 +313,31 @@
                                 }
                             }
                         }
+
+                        Spacer(modifier = Modifier.height(24.dp))
+
+                        // Tombol Proceed: abu-abu saat belum lengkap, ungu saat semua terisi
+                        Button(
+                            onClick = { showSuccessDialog = true },
+                            enabled = isFormComplete,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp),
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = colorResource(id = R.color.purple_title),
+                                contentColor = Color.White,
+                                disabledContainerColor = Color(0xFFE0E0E0),
+                                disabledContentColor = Color(0xFF9E9E9E)
+                            )
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.btn_proceed),
+                                fontSize = 16.sp
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
