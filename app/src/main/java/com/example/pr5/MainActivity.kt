@@ -75,3 +75,18 @@
                 birthDate.isNotBlank() &&
                 experience.isNotBlank() &&
                 (androidChecked || uiuxChecked || webChecked)
+
+        // Pop up hasil submit (otomatis hilang setelah 5 detik)
+        var showSuccessDialog by remember { mutableStateOf(false) }
+
+        if (showSuccessDialog) {
+            LaunchedEffect(Unit) {
+                delay(5000)
+                showSuccessDialog = false
+            }
+
+            val skillText = buildList {
+                if (androidChecked) add("Android")
+                if (uiuxChecked) add("UI/UX")
+                if (webChecked) add("Web")
+            }.ifEmpty { listOf("-") }.joinToString()
