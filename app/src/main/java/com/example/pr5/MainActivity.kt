@@ -109,3 +109,10 @@
                                 "Skill: $skillText"
                     )
                 },
+                confirmButton = {
+                    TextButton(onClick = { showSuccessDialog = false }) {
+                        Text("OK")
+                    }
+                }
+            )
+        }
