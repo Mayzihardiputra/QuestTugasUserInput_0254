@@ -43,4 +43,8 @@
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun FormBiodataScreen() {
-    }
+        var firstName by remember { mutableStateOf("") }
+        var lastName by remember { mutableStateOf("") }
+        var email by remember { mutableStateOf("") }
+        var birthDate by remember { mutableStateOf("") }
+        var experience by remember { mutableStateOf("") }
